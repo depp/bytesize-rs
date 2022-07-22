@@ -7,6 +7,13 @@ use std::str;
 use std::str::FromStr;
 
 /// A byte size which is displayed using SI prefixes.
+///
+/// Numbers are displayed using at most three digits of precision with the "B"
+/// units, for bytes.
+///
+/// The `FromStr` implementation recognizes both SI prefixes and binary
+/// prefixes. It ignores ASCII spaces and tabs between the number and the
+/// suffix. Note that some precision may be lost when using binary prefixes.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ByteSize(pub u64);
 
