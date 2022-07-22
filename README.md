@@ -31,6 +31,22 @@ Some test cases:
 18400000000000000000 => "18.4 EB"
 ```
 
+## Parsing
+
+The parser understands decimal numbers, decimal SI prefixes, and binary SI prefixes. It is not case-sensitive. A sequence ASCII space (0x20) and tab (0x09) characters may optionally appear between the number and the units. The parser will recognize all positve prefixes which are powers of 1,000, including prefixes that will overflow (yotta and zetta).
+
+Some test cases:
+
+```
+"0" => 0
+"1" => 1
+"555k" => 555000
+"15 EiB" => 17293822569102704640
+"1.5 mb" => 1500000
+"2gi" => 2147483648
+"0.001 zb" => 1000000000000000000
+```
+
 ## License
 
 This library is licensed under the terms of both the MIT license and the Apache 2.0 license. See [LICENSE-MIT.txt](LICENSE-MIT.txt) and [LICENSE-APACHE.txt](LICENSE-APACHE.txt) for details.
