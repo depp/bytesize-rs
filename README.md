@@ -4,6 +4,10 @@
 
 ByteSize is a Rust library for formatting and parsing numbers as byte sizes for humans. Numbers are formatted with three digits of precision, using SI prefixes, and the unit “B” for bytes. For example, 1000 is formatted as “1.00 KB”. The numbers are rounded using round-to-even, which is the familiar method used by `std::fmt`.
 
+There are no choices to make. ByteSize is not configurable.
+
+This library is also available for Go: https://github.com/depp/bytesize
+
 ## Formatting
 
 The precision cannot be changed. Non-decimal prefixes are not produced: no kibibytes, no powers of two. Wrap the number in the `ByteSize` struct and print it with `std::fmt`.
